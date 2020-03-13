@@ -69,7 +69,7 @@ router.delete('/:id', (req, res)=>{
 
 //-----------put---
 
-  router.put('./:id', (req,res)=>{
+  router.put('/:id', (req,res)=>{
       const{id} = req.params
       const{name,description}= req.body
       db.update(id, {name,description})

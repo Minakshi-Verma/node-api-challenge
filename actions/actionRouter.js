@@ -68,7 +68,7 @@ router.post('/', (req,res)=>{
 })
 
 //---put operation---
-router.put('./:id', (req,res)=>{
+router.put('/:id', (req,res)=>{
     const{id} = req.params
     const{project_id,description,notes} = req.body
     db.update(id, {project_id,description,notes})
@@ -83,6 +83,9 @@ router.put('./:id', (req,res)=>{
                  res.status(400).json({error:"action could no be updated"})
              })            
         }
+    })
+    .catch(err=>{
+        console.log("sorry",err)
     })
   })
 
