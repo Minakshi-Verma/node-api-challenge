@@ -40,13 +40,27 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+ We learned about express routes and middlewares this week.
+
 - [ ] Describe Middleware?
+
+Middlewares are the functions that run between client request and the server answer. They can get the request and response objects, operate on them, and (when specified) trigger some action. In other words, the middleware basically screens/filters the request(of client) and pass it forward to the next middleware(s)for further action before sending the response back to client.These middlewares can change the request or response but it is not necessary. Examples are logging or security.
 
 - [ ] Describe a Resource?
 
+A resource is an object with a type, associated data and a set of methods operates on it. The standard methods that are defined for the resources are HTTP GET, POST, PUT, PATCH and DELETE.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+API returns the response with the status code which let client know that the request was successful or fulfilled. 
+Example of successful requests:
+status code (200) = OK (The request was fulfilled)
+status code (201) = CREATED (Indicates successful creation of new object, it is a post command)
+status code (202)= Accepted (The request has been accepted for processing)
+
 - [ ] How can we partition our application into sub-applications?
+
+Sub applications provides flexibility to the application and make the code look clean and easy to read. For instance, we can create different folders for different resources. And we can have their specific routehandlers, middlewares, methods in their respective folders. If there is any middleware that we want to use with all our resources, we can define a global middleware and place it in root server files. This will make our application more easy to read to other developers.
 
 ## Minimum Viable Product
 
